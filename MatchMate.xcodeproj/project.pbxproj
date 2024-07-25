@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC092B0A2C519FD70034DFB6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC092B092C519FD70034DFB6 /* CoreDataManager.swift */; };
+		AC092B0C2C51A15D0034DFB6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC092B0B2C51A15D0034DFB6 /* Login.swift */; };
+		AC092B152C51A4FF0034DFB6 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC092B132C51A4FF0034DFB6 /* Profile+CoreDataClass.swift */; };
+		AC092B162C51A4FF0034DFB6 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC092B142C51A4FF0034DFB6 /* Profile+CoreDataProperties.swift */; };
+		AC2A0BAF2C50FDFB004E8401 /* NewMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BAE2C50FDFB004E8401 /* NewMatchesView.swift */; };
+		AC2A0BB12C50FE14004E8401 /* NewMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BB02C50FE14004E8401 /* NewMatchesViewModel.swift */; };
+		AC2A0BC12C51064F004E8401 /* ProfileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BB42C51064F004E8401 /* ProfileResult.swift */; };
+		AC2A0BC22C51064F004E8401 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BB52C51064F004E8401 /* Picture.swift */; };
+		AC2A0BC32C51064F004E8401 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BB62C51064F004E8401 /* Info.swift */; };
+		AC2A0BC52C51064F004E8401 /* Dob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BB82C51064F004E8401 /* Dob.swift */; };
+		AC2A0BC92C51064F004E8401 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BBC2C51064F004E8401 /* Name.swift */; };
+		AC2A0BCA2C51064F004E8401 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BBD2C51064F004E8401 /* Location.swift */; };
+		AC2A0BCD2C51064F004E8401 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BC02C51064F004E8401 /* Profile.swift */; };
+		AC2A0BCF2C510A43004E8401 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BCE2C510A43004E8401 /* ProfileView.swift */; };
+		AC2A0BD22C5111C9004E8401 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BD12C5111C9004E8401 /* NetworkServiceProtocol.swift */; };
+		AC2A0BD42C51124B004E8401 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BD32C51124B004E8401 /* NetworkService.swift */; };
+		AC2A0BD62C511FFE004E8401 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BD52C511FFE004E8401 /* NetworkError.swift */; };
+		AC2A0BD82C51226D004E8401 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BD72C51226D004E8401 /* NetworkConstant.swift */; };
+		AC2A0BDB2C5123EC004E8401 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BDA2C5123EC004E8401 /* ProfileRepository.swift */; };
+		AC2A0BDE2C518872004E8401 /* MatchMateModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */; };
+		AC2A0BE12C518D57004E8401 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BE02C518D57004E8401 /* CoreDataService.swift */; };
 		ACA6B1CA2C50DDBF00512F13 /* MatchMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */; };
 		ACA6B1CC2C50DDBF00512F13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */; };
 		ACA6B1CE2C50DDC000512F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA6B1CD2C50DDC000512F13 /* Assets.xcassets */; };
@@ -34,6 +55,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC092B092C519FD70034DFB6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		AC092B0B2C51A15D0034DFB6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		AC092B132C51A4FF0034DFB6 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AC092B142C51A4FF0034DFB6 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AC2A0BAE2C50FDFB004E8401 /* NewMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesView.swift; sourceTree = "<group>"; };
+		AC2A0BB02C50FE14004E8401 /* NewMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesViewModel.swift; sourceTree = "<group>"; };
+		AC2A0BB42C51064F004E8401 /* ProfileResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileResult.swift; sourceTree = "<group>"; };
+		AC2A0BB52C51064F004E8401 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		AC2A0BB62C51064F004E8401 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		AC2A0BB82C51064F004E8401 /* Dob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dob.swift; sourceTree = "<group>"; };
+		AC2A0BBC2C51064F004E8401 /* Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		AC2A0BBD2C51064F004E8401 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		AC2A0BC02C51064F004E8401 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		AC2A0BCE2C510A43004E8401 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AC2A0BD12C5111C9004E8401 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		AC2A0BD32C51124B004E8401 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AC2A0BD52C511FFE004E8401 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AC2A0BD72C51226D004E8401 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		AC2A0BDA2C5123EC004E8401 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		AC2A0BDD2C518872004E8401 /* MatchMateModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMateModel.xcdatamodel; sourceTree = "<group>"; };
+		AC2A0BE02C518D57004E8401 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		ACA6B1C62C50DDBF00512F13 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateApp.swift; sourceTree = "<group>"; };
 		ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,9 +113,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC092B172C51A5090034DFB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC092B132C51A4FF0034DFB6 /* Profile+CoreDataClass.swift */,
+				AC092B142C51A4FF0034DFB6 /* Profile+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC2A0BAB2C50FD23004E8401 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */,
+				ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AC2A0BAC2C50FD38004E8401 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0BCE2C510A43004E8401 /* ProfileView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		AC2A0BAD2C50FDC6004E8401 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0BB22C50FE1B004E8401 /* NewMatches */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC2A0BB22C50FE1B004E8401 /* NewMatches */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0BAE2C50FDFB004E8401 /* NewMatchesView.swift */,
+				AC2A0BB02C50FE14004E8401 /* NewMatchesViewModel.swift */,
+			);
+			path = NewMatches;
+			sourceTree = "<group>";
+		};
+		AC2A0BB32C51063F004E8401 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0BB82C51064F004E8401 /* Dob.swift */,
+				AC2A0BB62C51064F004E8401 /* Info.swift */,
+				AC2A0BBD2C51064F004E8401 /* Location.swift */,
+				AC2A0BBC2C51064F004E8401 /* Name.swift */,
+				AC2A0BB52C51064F004E8401 /* Picture.swift */,
+				AC2A0BC02C51064F004E8401 /* Profile.swift */,
+				AC2A0BB42C51064F004E8401 /* ProfileResult.swift */,
+				AC092B0B2C51A15D0034DFB6 /* Login.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC2A0BD02C5111A5004E8401 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0BD12C5111C9004E8401 /* NetworkServiceProtocol.swift */,
+				AC2A0BD32C51124B004E8401 /* NetworkService.swift */,
+				AC2A0BD52C511FFE004E8401 /* NetworkError.swift */,
+				AC2A0BD72C51226D004E8401 /* NetworkConstant.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AC2A0BD92C5123C3004E8401 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A0BDA2C5123EC004E8401 /* ProfileRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		AC2A0BDF2C518D46004E8401 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AC092B172C51A5090034DFB6 /* Model */,
+				AC2A0BE02C518D57004E8401 /* CoreDataService.swift */,
+				AC092B092C519FD70034DFB6 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		ACA6B1BD2C50DDBF00512F13 = {
 			isa = PBXGroup;
 			children = (
+				AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */,
 				ACA6B1C82C50DDBF00512F13 /* MatchMate */,
 				ACA6B1D92C50DDC000512F13 /* MatchMateTests */,
 				ACA6B1E32C50DDC000512F13 /* MatchMateUITests */,
@@ -94,8 +224,13 @@
 		ACA6B1C82C50DDBF00512F13 /* MatchMate */ = {
 			isa = PBXGroup;
 			children = (
-				ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */,
-				ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */,
+				AC2A0BDF2C518D46004E8401 /* CoreData */,
+				AC2A0BD92C5123C3004E8401 /* Repository */,
+				AC2A0BD02C5111A5004E8401 /* Networking */,
+				AC2A0BB32C51063F004E8401 /* Model */,
+				AC2A0BAD2C50FDC6004E8401 /* View */,
+				AC2A0BAC2C50FD38004E8401 /* CustomViews */,
+				AC2A0BAB2C50FD23004E8401 /* App */,
 				ACA6B1CD2C50DDC000512F13 /* Assets.xcassets */,
 				ACA6B1CF2C50DDC000512F13 /* Preview Content */,
 			);
@@ -257,8 +392,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC2A0BCD2C51064F004E8401 /* Profile.swift in Sources */,
+				AC092B0C2C51A15D0034DFB6 /* Login.swift in Sources */,
+				AC2A0BC22C51064F004E8401 /* Picture.swift in Sources */,
+				AC2A0BAF2C50FDFB004E8401 /* NewMatchesView.swift in Sources */,
 				ACA6B1CC2C50DDBF00512F13 /* ContentView.swift in Sources */,
 				ACA6B1CA2C50DDBF00512F13 /* MatchMateApp.swift in Sources */,
+				AC2A0BCA2C51064F004E8401 /* Location.swift in Sources */,
+				AC2A0BDE2C518872004E8401 /* MatchMateModel.xcdatamodeld in Sources */,
+				AC2A0BD42C51124B004E8401 /* NetworkService.swift in Sources */,
+				AC092B0A2C519FD70034DFB6 /* CoreDataManager.swift in Sources */,
+				AC2A0BCF2C510A43004E8401 /* ProfileView.swift in Sources */,
+				AC2A0BD22C5111C9004E8401 /* NetworkServiceProtocol.swift in Sources */,
+				AC2A0BC52C51064F004E8401 /* Dob.swift in Sources */,
+				AC2A0BD62C511FFE004E8401 /* NetworkError.swift in Sources */,
+				AC2A0BC12C51064F004E8401 /* ProfileResult.swift in Sources */,
+				AC2A0BE12C518D57004E8401 /* CoreDataService.swift in Sources */,
+				AC2A0BB12C50FE14004E8401 /* NewMatchesViewModel.swift in Sources */,
+				AC2A0BD82C51226D004E8401 /* NetworkConstant.swift in Sources */,
+				AC2A0BDB2C5123EC004E8401 /* ProfileRepository.swift in Sources */,
+				AC2A0BC32C51064F004E8401 /* Info.swift in Sources */,
+				AC2A0BC92C51064F004E8401 /* Name.swift in Sources */,
+				AC092B152C51A4FF0034DFB6 /* Profile+CoreDataClass.swift in Sources */,
+				AC092B162C51A4FF0034DFB6 /* Profile+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +744,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC2A0BDD2C518872004E8401 /* MatchMateModel.xcdatamodel */,
+			);
+			currentVersion = AC2A0BDD2C518872004E8401 /* MatchMateModel.xcdatamodel */;
+			name = MatchMateModel.xcdatamodeld;
+			path = "/Users/amrutwaghmare/Documents/Project/Github Project/MatchMate/MatchMateModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACA6B1BE2C50DDBF00512F13 /* Project object */;
 }
