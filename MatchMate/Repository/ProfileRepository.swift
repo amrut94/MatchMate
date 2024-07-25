@@ -11,10 +11,13 @@ import Foundation
 protocol ProfileRepositoryProtocol {
     // Function to get candidate profile, returns an array of Profile objects or an error
     func getProfilesData(page: Int, size: Int) async throws -> [Profile]?
+    func updateProfileStatus(id: String, status: Bool) async throws
+    func fetchMatchProfiles(page: Int, results: Int) async throws -> [Profile]?
 }
 
 // Implementation of the ProfileRepositoryProtocol
 class ProfileRepository: ProfileRepositoryProtocol {
+    
     private let apiService: NetworkServiceProtocol
     private let coreDataService: CoreDataService
     
@@ -41,9 +44,33 @@ class ProfileRepository: ProfileRepositoryProtocol {
                 throw NetworkError.noDataFound
             }
             try await coreDataService.saveProfiles(profiles)
+           return try await fetchDataFromLocal(page: page, size: size)
+        } catch {
+            return try await fetchDataFromLocal(page: page, size: size)
+        }
+    }
+    
+    private func fetchDataFromLocal(page: Int, size: Int) async throws -> [Profile]? {
+        do {
             return try await coreDataService.fetchProfiles(page: page, results: size)
         } catch {
-            return try await coreDataService.fetchProfiles(page: page, results: size)
+            throw error
+        }
+    }
+    
+    func updateProfileStatus(id: String, status: Bool) async throws {
+        do {
+            try await coreDataService.updateProfileStatus(id: id, status: status)
+        } catch {
+            throw error
+        }
+    }
+    
+    func fetchMatchProfiles(page: Int, results: Int) async throws -> [Profile]? {
+        do {
+            return try await coreDataService.fetchMatchProfiles(page: page, results: results)
+        } catch {
+            throw error
         }
     }
 }

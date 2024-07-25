@@ -1,7 +1,6 @@
 import Foundation
 
-struct Profile : Codable, Identifiable {
-    let id = UUID()
+struct Profile : Codable {
     let gender : String?
     let name : Name?
     let location : Location?
@@ -10,6 +9,7 @@ struct Profile : Codable, Identifiable {
     let cell : String?
     let picture : Picture?
     let login : Login?
+    var isAccepted: Bool?
     
     enum CodingKeys: String, CodingKey {
         
@@ -30,7 +30,8 @@ struct Profile : Codable, Identifiable {
          phone: String?,
          cell: String?,
          picture: Picture?,
-         login: Login?) {
+         login: Login?,
+         isAccepted: Bool?) {
         self.gender = gender
         self.name = name
         self.location = location
@@ -39,6 +40,7 @@ struct Profile : Codable, Identifiable {
         self.cell = cell
         self.picture = picture
         self.login = login
+        self.isAccepted = isAccepted
     }
     
     init(from decoder: Decoder) throws {

@@ -20,7 +20,7 @@ enum NetworkError: LocalizedError {
         case .requestFailed:
             return "The network request failed."
         case .noDataFound:
-            return "Response with no data"
+            return "No data found"
         case .decodingFailed(let error):
             return "Failed to decode the response: \(error.localizedDescription)"
         case .unknown(let error):

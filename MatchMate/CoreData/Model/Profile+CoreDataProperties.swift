@@ -31,7 +31,7 @@ extension ProfileModel {
     @NSManaged public var large: String?
     @NSManaged public var medium: String?
     @NSManaged public var thumbnail: String?
-    
+    @NSManaged public var isAccepted: NSNumber?
 }
 
 extension ProfileModel : Identifiable {
@@ -51,6 +51,7 @@ extension ProfileModel : Identifiable {
         self.large = profile.picture?.large
         self.medium = profile.picture?.medium
         self.thumbnail = profile.picture?.thumbnail
+        self.isAccepted = self.isAccepted
     }
     
     func toDomainModel() -> Profile {
@@ -73,6 +74,7 @@ extension ProfileModel : Identifiable {
                 large: large,
                 medium: medium,
                 thumbnail: thumbnail),
-            login: Login(uuid: id))
+            login: Login(uuid: id), 
+            isAccepted: isAccepted?.boolValue)
     }
 }

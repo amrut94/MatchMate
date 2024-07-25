@@ -6,33 +6,29 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ProfileView: View {
     var profile: Profile?
+    var onAccept: () -> Void
+    var onReject: () -> Void
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: profile?.picture?.thumbnail ?? "")) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .frame(width: 100, height: 100)
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(.gray)
-                @unknown default:
-                    EmptyView()
-                }
+            WebImage(url: URL(string: profile?.picture?.medium ?? "")) { image in
+                image.resizable()
+            } placeholder: {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(.gray)
             }
+            .indicator(.activity)
+            .transition(.fade(duration: 0.5))
+            .scaledToFit()
+            .frame(width: 100, height: 100, alignment: .center)
+            .clipShape(Circle())
             .padding(.top)
             
             Text(profile?.name?.first ?? "")
@@ -44,26 +40,42 @@ struct ProfileView: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .padding(.top, 1)
-            
-            HStack {
-                Button(action: {
-                    // Reject action
-                }) {
-                    Image(systemName: "xmark.circle")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.red)
+            if let isAccepted = profile?.isAccepted {
+                if isAccepted {
+                    Text("Accepted")
                         .padding()
+                        .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(
+                                cornerRadius: 20,
+                                style: .continuous
+                            )
+                            .fill(.green)
+                        )
+                    
+                } else {
+                    Text("Declined")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(
+                                cornerRadius: 20,
+                                style: .continuous
+                            )
+                            .fill(.red)
+                        )
                 }
-                
-                Button(action: {
-                    // Accept action
-                }) {
-                    Image(systemName: "checkmark.circle")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.green)
-                        .padding()
+            } else {
+                HStack {
+                    RejectButton()
+                        .onTapGesture {
+                            onReject()
+                        }
+                    
+                    AcceptButton()
+                        .onTapGesture {
+                            onAccept()
+                        }
                 }
             }
         }
@@ -75,10 +87,6 @@ struct ProfileView: View {
         .padding(.horizontal)
     }
 }
-//#Preview {
-//    ProfileView(
-//        name: "Amrut Waghmare",
-//        age: 29,
-//        address: "Aundh, Pune, Maharashtra, India",
-//        imageUrl: URL(string: "https://randomuser.me/api/portraits/thumb/women/76.jpg")!)
-//}
+#Preview {
+    ProfileView(onAccept: {}, onReject: {})
+}

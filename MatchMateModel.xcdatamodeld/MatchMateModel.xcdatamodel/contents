@@ -9,6 +9,7 @@
         <attribute name="first" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isAccepted" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
         <attribute name="large" optional="YES" attributeType="String"/>
         <attribute name="last" optional="YES" attributeType="String"/>
         <attribute name="medium" optional="YES" attributeType="String"/>

@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+enum MatchType {
+    case all
+    case matches
+}
+
 struct NewMatchesView: View {
-    @StateObject private var viewModel = NewMatchesViewModel()
+    @StateObject private var viewModel: NewMatchesViewModel
+    
+    init(viewModel: NewMatchesViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationView {
@@ -17,7 +26,7 @@ struct NewMatchesView: View {
                     .font(.largeTitle)
                     .padding(.top)
                 
-                if let errorMessage = viewModel.errorMessage {
+                if let errorMessage = viewModel.errorMessage, !viewModel.showAlert {
                     VStack {
                         Text(errorMessage)
                             .foregroundColor(.red)
@@ -36,18 +45,24 @@ struct NewMatchesView: View {
                         }
                     }
                 } else {
-                    List(viewModel.profiles, id: \.id) { profile in
-                        ProfileView(profile: profile)
-                    }
-                    
-                    Button(action: {
-                        Task {
-                            await viewModel.fetchProfilesData()
+                    List(viewModel.profiles.indices, id: \.self) { index in
+                        ProfileView(profile: viewModel.profiles[index],
+                                    onAccept: {
+                            viewModel.upateProfileStatus(index: index, status: true)
+                        },
+                                    onReject: {
+                            viewModel.upateProfileStatus(index: index, status: false)
+                        })
+                        .onAppear {
+                            // Load more items when the user scrolls to the last 10 items
+                            let totalItems = viewModel.profiles.count
+                            if index == (totalItems - 10) {
+                                Task {
+                                    await viewModel.fetchProfilesData()
+                                }
+                            }
                         }
-                    }) {
-                        Text("Load More")
                     }
-                    .padding()
                 }
             }
             .navigationBarHidden(true)
@@ -55,9 +70,12 @@ struct NewMatchesView: View {
         .task {
             await viewModel.fetchProfilesData()
         }
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage ?? ""), dismissButton: .default(Text("OK")))
+        }
     }
 }
 
 #Preview {
-    NewMatchesView()
+    NewMatchesView(viewModel: NewMatchesViewModel(type: .all))
 }
