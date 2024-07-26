@@ -10,8 +10,8 @@ MatchMate is an iOS app that simulates a matrimonial app by displaying match car
 
 ## Requirements
 
-- iOS 13.0+
-- Xcode 12.0+
+- iOS 16.0+
+- Xcode 13.0+
 - Swift 5.0+
 
 ## Installation
@@ -46,7 +46,6 @@ The MatchMate app follows the MVVM (Model-View-ViewModel) architecture pattern t
 
 ## Dependencies
 
-- [SDWebImage](https://github.com/SDWebImage/SDWebImage): For asynchronous loading and caching of images.
 - [SwiftUI](https://developer.apple.com/documentation/swiftui): For building user interface components.
 - [Core Data](https://developer.apple.com/documentation/coredata): For a similar local database to store user profiles and their acceptance/decline status.
   
