@@ -6,32 +6,39 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
 
 struct ProfileView: View {
     var profile: Profile?
     var onAccept: () -> Void
     var onReject: () -> Void
+    let imageSize: CGFloat = 100
     
     var body: some View {
         VStack {
             let name = (profile?.name?.first ?? "") + " " + (profile?.name?.last ?? "")
             let address = (profile?.location?.city ?? "") + " " + (profile?.location?.state ?? "")
-            WebImage(url: URL(string: profile?.picture?.medium ?? "")) { image in
-                image.resizable()
-            } placeholder: {
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.gray)
+            
+            CacheAsyncImage(url: URL(string: profile?.picture?.medium ?? "")) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: imageSize, height: imageSize)
+                case .success(let image):
+                    image.resizable()
+                        .scaledToFill()
+                        .frame(width: imageSize, height: imageSize)
+                        .clipped()
+                case .failure:
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: imageSize, height: imageSize)
+                        .foregroundColor(.gray)
+                @unknown default:
+                    EmptyView()
+                }
             }
-            .indicator(.activity)
-            .transition(.fade(duration: 0.5))
-            .scaledToFit()
-            .frame(width: 100, height: 100, alignment: .center)
             .clipShape(Circle())
-            .padding(.top)
             
             Text(name)
                 .font(.title2)
