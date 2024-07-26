@@ -15,6 +15,8 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
+            let name = (profile?.name?.first ?? "") + " " + (profile?.name?.last ?? "")
+            let address = (profile?.location?.city ?? "") + " " + (profile?.location?.state ?? "")
             WebImage(url: URL(string: profile?.picture?.medium ?? "")) { image in
                 image.resizable()
             } placeholder: {
@@ -31,14 +33,13 @@ struct ProfileView: View {
             .clipShape(Circle())
             .padding(.top)
             
-            Text(profile?.name?.first ?? "")
+            Text(name)
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top, 5)
             
-            Text("\(profile?.dob?.age ?? 0), \(profile?.location?.city ?? "")")
+            Text("\(profile?.dob?.age ?? 0), \(address)")
                 .font(.subheadline)
-                .foregroundColor(.gray)
                 .padding(.top, 1)
             if let isAccepted = profile?.isAccepted {
                 if isAccepted {
@@ -81,7 +82,7 @@ struct ProfileView: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color.white)
+        .background(Color(UIColor.systemBackground))
         .cornerRadius(10)
         .shadow(radius: 5)
         .padding(.horizontal)

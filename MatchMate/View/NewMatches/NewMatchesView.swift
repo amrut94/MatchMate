@@ -45,20 +45,26 @@ struct NewMatchesView: View {
                         }
                     }
                 } else {
-                    List(viewModel.profiles.indices, id: \.self) { index in
-                        ProfileView(profile: viewModel.profiles[index],
-                                    onAccept: {
-                            viewModel.upateProfileStatus(index: index, status: true)
-                        },
-                                    onReject: {
-                            viewModel.upateProfileStatus(index: index, status: false)
-                        })
-                        .onAppear {
-                            // Load more items when the user scrolls to the last 10 items
-                            let totalItems = viewModel.profiles.count
-                            if index == (totalItems - 10) {
-                                Task {
-                                    await viewModel.fetchProfilesData()
+                    if viewModel.profiles.isEmpty {
+                        EmptyStateView()
+                    } else {
+                        List(viewModel.profiles.indices, id: \.self) { index in
+                            ProfileView(profile: viewModel.profiles[index],
+                                        onAccept: {
+                                viewModel.upateProfileStatus(index: index, status: true)
+                            },
+                                        onReject: {
+                                viewModel.upateProfileStatus(index: index, status: false)
+                            })
+                            .onAppear {
+                                // Load more items when the user scrolls to the last 10 items
+                                if viewModel.profiles.count > 0 {
+                                    let totalItems = viewModel.profiles.count
+                                    if index == (totalItems - 10) {
+                                        Task {
+                                            await viewModel.loadMoreData()
+                                        }
+                                    }
                                 }
                             }
                         }

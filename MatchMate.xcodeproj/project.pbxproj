@@ -29,6 +29,8 @@
 		AC2A0BDE2C518872004E8401 /* MatchMateModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */; };
 		AC2A0BE12C518D57004E8401 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A0BE02C518D57004E8401 /* CoreDataService.swift */; };
 		AC7030292C528F5900AB5E52 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7030282C528F5900AB5E52 /* HomeView.swift */; };
+		AC70302C2C53542500AB5E52 /* NewMatchesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70302B2C53542500AB5E52 /* NewMatchesViewModelTest.swift */; };
+		AC70302E2C535FE500AB5E52 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70302D2C535FE500AB5E52 /* EmptyStateView.swift */; };
 		ACA6B1CA2C50DDBF00512F13 /* MatchMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */; };
 		ACA6B1CC2C50DDBF00512F13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */; };
 		ACA6B1CE2C50DDC000512F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA6B1CD2C50DDC000512F13 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		AC2A0BDD2C518872004E8401 /* MatchMateModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMateModel.xcdatamodel; sourceTree = "<group>"; };
 		AC2A0BE02C518D57004E8401 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		AC7030282C528F5900AB5E52 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AC70302B2C53542500AB5E52 /* NewMatchesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesViewModelTest.swift; sourceTree = "<group>"; };
+		AC70302D2C535FE500AB5E52 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		ACA6B1C62C50DDBF00512F13 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateApp.swift; sourceTree = "<group>"; };
 		ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				AC2A0BCE2C510A43004E8401 /* ProfileView.swift */,
 				ACDCBC5F2C5258EE0078237B /* AcceptButton.swift */,
 				ACDCBC612C5258FB0078237B /* RejectButton.swift */,
+				AC70302D2C535FE500AB5E52 /* EmptyStateView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -219,6 +224,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		AC70302A2C53540A00AB5E52 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC70302B2C53542500AB5E52 /* NewMatchesViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		ACA6B1BD2C50DDBF00512F13 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +281,7 @@
 		ACA6B1D92C50DDC000512F13 /* MatchMateTests */ = {
 			isa = PBXGroup;
 			children = (
+				AC70302A2C53540A00AB5E52 /* ViewModel */,
 				ACA6B1DA2C50DDC000512F13 /* MatchMateTests.swift */,
 			);
 			path = MatchMateTests;
@@ -443,6 +457,7 @@
 				AC7030292C528F5900AB5E52 /* HomeView.swift in Sources */,
 				AC2A0BC12C51064F004E8401 /* ProfileResult.swift in Sources */,
 				AC2A0BE12C518D57004E8401 /* CoreDataService.swift in Sources */,
+				AC70302E2C535FE500AB5E52 /* EmptyStateView.swift in Sources */,
 				AC2A0BB12C50FE14004E8401 /* NewMatchesViewModel.swift in Sources */,
 				AC2A0BD82C51226D004E8401 /* NetworkConstant.swift in Sources */,
 				ACDCBC622C5258FB0078237B /* RejectButton.swift in Sources */,
@@ -459,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA6B1DB2C50DDC000512F13 /* MatchMateTests.swift in Sources */,
+				AC70302C2C53542500AB5E52 /* NewMatchesViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

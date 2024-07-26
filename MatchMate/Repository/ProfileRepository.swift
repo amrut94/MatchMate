@@ -28,10 +28,12 @@ class ProfileRepository: ProfileRepositoryProtocol {
         self.coreDataService = coreDataService
     }
     
-    /// Fetch profiles from the API using the injected API service
+    /// Fetch profiles from the API using the injected API service.
     /// - Parameters:
-    ///   - page: page number for pagination
-    /// - Returns: Profiles date
+    ///   - page: The page number for pagination.
+    ///   - size: The number of results per page.
+    /// - Returns: An array of Profile objects or nil if no profiles are found.
+    /// - Throws: An error if the fetch operation fails.
     func getProfilesData(page: Int, size: Int) async throws -> [Profile]? {
         do {
             let profileResult: ProfileResult = try await apiService.fetchProfileData(
@@ -50,6 +52,12 @@ class ProfileRepository: ProfileRepositoryProtocol {
         }
     }
     
+    /// Fetch profiles from local storage.
+    /// - Parameters:
+    ///   - page: The page number for pagination.
+    ///   - size: The number of results per page.
+    /// - Returns: An array of Profile objects or nil if no profiles are found.
+    /// - Throws: An error if the fetch operation fails.
     private func fetchDataFromLocal(page: Int, size: Int) async throws -> [Profile]? {
         do {
             return try await coreDataService.fetchProfiles(page: page, results: size)
@@ -58,6 +66,11 @@ class ProfileRepository: ProfileRepositoryProtocol {
         }
     }
     
+    /// Update the status of a profile in local storage.
+    /// - Parameters:
+    ///   - id: The unique identifier of the profile.
+    ///   - status: The new status to be set.
+    /// - Throws: An error if the update operation fails.
     func updateProfileStatus(id: String, status: Bool) async throws {
         do {
             try await coreDataService.updateProfileStatus(id: id, status: status)
@@ -65,7 +78,13 @@ class ProfileRepository: ProfileRepositoryProtocol {
             throw error
         }
     }
-    
+ 
+    /// Fetch matched profiles from local storage.
+    /// - Parameters:
+    ///   - page: The page number for pagination.
+    ///   - results: The number of results per page.
+    /// - Returns: An array of Profile objects or nil if no profiles are found.
+    /// - Throws: An error if the fetch operation fails.
     func fetchMatchProfiles(page: Int, results: Int) async throws -> [Profile]? {
         do {
             return try await coreDataService.fetchMatchProfiles(page: page, results: results)
