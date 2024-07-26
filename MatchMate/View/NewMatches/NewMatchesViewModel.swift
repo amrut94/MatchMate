@@ -14,6 +14,7 @@ class NewMatchesViewModel: ObservableObject {
     
     private var pageNumber: Int = 1
     private let pageSize = 25
+    private var isLoadMore = true
     
     private let repository: ProfileRepositoryProtocol
     private let type: MatchType
@@ -30,9 +31,10 @@ class NewMatchesViewModel: ObservableObject {
     
     // Fetch Profiles Data from the repository and handle the response
     func fetchProfilesData() async {
-        isLoading = true
         pageNumber = 1
+        isLoadMore = true
         DispatchQueue.main.async { [weak self] in
+            self?.isLoading = true
             self?.profiles = []
         }
         if type == .all {
@@ -45,9 +47,13 @@ class NewMatchesViewModel: ObservableObject {
     /// Load more profile data for pagination
     func loadMoreData() async {
         if type == .all {
-            await fetchAllProfileData()
+            if isLoadMore {
+                await fetchAllProfileData()
+            }
         } else {
-            await fetchMatchProfileData()
+            if isLoadMore {
+                await fetchMatchProfileData()
+            }
         }
     }
     
@@ -58,6 +64,7 @@ class NewMatchesViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
                 isLoading = false
+                isLoadMore = profileResponse?.count == pageSize
                 if let profileResponse {
                     if profiles.count < pageSize {
                         profiles = profileResponse
@@ -82,6 +89,7 @@ class NewMatchesViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
                 isLoading = false
+                isLoadMore = profileResponse?.count == pageSize
                 if let profileResponse {
                     pageNumber += 1
                     profiles.append(contentsOf: profileResponse)
