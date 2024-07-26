@@ -210,6 +210,7 @@
 		AC2A0BDF2C518D46004E8401 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */,
 				AC092B172C51A5090034DFB6 /* Model */,
 				AC2A0BE02C518D57004E8401 /* CoreDataService.swift */,
 				AC092B092C519FD70034DFB6 /* CoreDataManager.swift */,
@@ -244,7 +245,6 @@
 		ACA6B1BD2C50DDBF00512F13 = {
 			isa = PBXGroup;
 			children = (
-				AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */,
 				ACA6B1C82C50DDBF00512F13 /* MatchMate */,
 				ACA6B1D92C50DDC000512F13 /* MatchMateTests */,
 				ACA6B1E32C50DDC000512F13 /* MatchMateUITests */,
@@ -816,8 +816,7 @@
 				AC2A0BDD2C518872004E8401 /* MatchMateModel.xcdatamodel */,
 			);
 			currentVersion = AC2A0BDD2C518872004E8401 /* MatchMateModel.xcdatamodel */;
-			name = MatchMateModel.xcdatamodeld;
-			path = "/Users/amrutwaghmare/Documents/Project/Github Project/MatchMate/MatchMateModel.xcdatamodeld";
+			path = MatchMateModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
