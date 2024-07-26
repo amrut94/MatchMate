@@ -31,6 +31,7 @@
 		AC7030292C528F5900AB5E52 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7030282C528F5900AB5E52 /* HomeView.swift */; };
 		AC70302C2C53542500AB5E52 /* NewMatchesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70302B2C53542500AB5E52 /* NewMatchesViewModelTest.swift */; };
 		AC70302E2C535FE500AB5E52 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70302D2C535FE500AB5E52 /* EmptyStateView.swift */; };
+		AC7030322C53838100AB5E52 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7030312C53838100AB5E52 /* CacheAsyncImage.swift */; };
 		ACA6B1CA2C50DDBF00512F13 /* MatchMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */; };
 		ACA6B1CC2C50DDBF00512F13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */; };
 		ACA6B1CE2C50DDC000512F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA6B1CD2C50DDC000512F13 /* Assets.xcassets */; };
@@ -38,7 +39,6 @@
 		ACA6B1DB2C50DDC000512F13 /* MatchMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1DA2C50DDC000512F13 /* MatchMateTests.swift */; };
 		ACA6B1E52C50DDC000512F13 /* MatchMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1E42C50DDC000512F13 /* MatchMateUITests.swift */; };
 		ACA6B1E72C50DDC000512F13 /* MatchMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6B1E62C50DDC000512F13 /* MatchMateUITestsLaunchTests.swift */; };
-		ACDCBC542C52326D0078237B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ACDCBC532C52326D0078237B /* SDWebImageSwiftUI */; };
 		ACDCBC602C5258EE0078237B /* AcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCBC5F2C5258EE0078237B /* AcceptButton.swift */; };
 		ACDCBC622C5258FB0078237B /* RejectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCBC612C5258FB0078237B /* RejectButton.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +86,7 @@
 		AC70302B2C53542500AB5E52 /* NewMatchesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesViewModelTest.swift; sourceTree = "<group>"; };
 		AC70302D2C535FE500AB5E52 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		AC70302F2C5363C900AB5E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC7030312C53838100AB5E52 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		ACA6B1C62C50DDBF00512F13 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA6B1C92C50DDBF00512F13 /* MatchMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateApp.swift; sourceTree = "<group>"; };
 		ACA6B1CB2C50DDBF00512F13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACDCBC542C52326D0078237B /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +233,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		AC7030302C53836A00AB5E52 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AC7030312C53838100AB5E52 /* CacheAsyncImage.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		ACA6B1BD2C50DDBF00512F13 = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +266,7 @@
 		ACA6B1C82C50DDBF00512F13 /* MatchMate */ = {
 			isa = PBXGroup;
 			children = (
+				AC7030302C53836A00AB5E52 /* Utility */,
 				AC70302F2C5363C900AB5E52 /* Info.plist */,
 				AC2A0BDF2C518D46004E8401 /* CoreData */,
 				AC2A0BD92C5123C3004E8401 /* Repository */,
@@ -322,7 +331,6 @@
 			);
 			name = MatchMate;
 			packageProductDependencies = (
-				ACDCBC532C52326D0078237B /* SDWebImageSwiftUI */,
 			);
 			productName = MatchMate;
 			productReference = ACA6B1C62C50DDBF00512F13 /* MatchMate.app */;
@@ -397,7 +405,6 @@
 			);
 			mainGroup = ACA6B1BD2C50DDBF00512F13;
 			packageReferences = (
-				ACDCBC512C52323B0078237B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = ACA6B1C72C50DDBF00512F13 /* Products */;
 			projectDirPath = "";
@@ -446,6 +453,7 @@
 				AC2A0BC22C51064F004E8401 /* Picture.swift in Sources */,
 				AC2A0BAF2C50FDFB004E8401 /* NewMatchesView.swift in Sources */,
 				ACA6B1CC2C50DDBF00512F13 /* ContentView.swift in Sources */,
+				AC7030322C53838100AB5E52 /* CacheAsyncImage.swift in Sources */,
 				ACA6B1CA2C50DDBF00512F13 /* MatchMateApp.swift in Sources */,
 				AC2A0BCA2C51064F004E8401 /* Location.swift in Sources */,
 				AC2A0BDE2C518872004E8401 /* MatchMateModel.xcdatamodeld in Sources */,
@@ -557,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -614,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -640,6 +648,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -669,6 +678,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,7 +701,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2927LU2Y84;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amrut.MatchMateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -711,7 +721,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2927LU2Y84;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amrut.MatchMateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -798,25 +808,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		ACDCBC512C52323B0078237B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ACDCBC532C52326D0078237B /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ACDCBC512C52323B0078237B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AC2A0BDC2C518872004E8401 /* MatchMateModel.xcdatamodeld */ = {

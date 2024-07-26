@@ -25,8 +25,11 @@ struct NewMatchesView: View {
                 Text("Profile Matches")
                     .font(.largeTitle)
                     .padding(.top)
-                
-                if let errorMessage = viewModel.errorMessage, !viewModel.showAlert {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .padding()
+                } else if let errorMessage = viewModel.errorMessage, !viewModel.showAlert {
                     VStack {
                         Text(errorMessage)
                             .foregroundColor(.red)

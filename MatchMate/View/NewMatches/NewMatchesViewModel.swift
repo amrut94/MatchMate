@@ -10,6 +10,7 @@ class NewMatchesViewModel: ObservableObject {
     @Published var profiles: [Profile] = []
     @Published var errorMessage: String?
     @Published var showAlert: Bool = false
+    @Published var isLoading: Bool = false
     
     private var pageNumber: Int = 1
     private let pageSize = 25
@@ -29,6 +30,7 @@ class NewMatchesViewModel: ObservableObject {
     
     // Fetch Profiles Data from the repository and handle the response
     func fetchProfilesData() async {
+        isLoading = true
         pageNumber = 1
         DispatchQueue.main.async { [weak self] in
             self?.profiles = []
@@ -55,6 +57,7 @@ class NewMatchesViewModel: ObservableObject {
             let profileResponse = try await repository.getProfilesData(page: pageNumber, size: pageSize)
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
+                isLoading = false
                 if let profileResponse {
                     if profiles.count < pageSize {
                         profiles = profileResponse
@@ -78,6 +81,7 @@ class NewMatchesViewModel: ObservableObject {
             let profileResponse = try await repository.fetchMatchProfiles(page: pageNumber, results: pageSize)
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
+                isLoading = false
                 if let profileResponse {
                     pageNumber += 1
                     profiles.append(contentsOf: profileResponse)
